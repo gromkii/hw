@@ -21,10 +21,20 @@
 	<body>
 		<div ng-controller="DemoCtrl">
 
+			<!-- sortby abv -->
+			<md-radio-group ng-model="filter.order">
+				<md-radio-button value="name">
+					Name: A-Z
+				</md-radio-button>
+				<md-radio-button ng-click="abv">
+					ABV: Low-High
+				</md-radio-button>
+			</md-radio-group>
 
+			
 			<!-- refactor into a partial, if neccessary. Probably not. -->
 			<md-grid-list md-cols="4" md-gutter="1.5em" md-row-height="400px">
-				<md-grid-tile ng-repeat="beer in beers" >
+				<md-grid-tile ng-repeat="beer in beers | orderBy:filter.order" >
 					<md-content class="beer-cell">
 						<img ng-src="{{beer.image_url}}" class="beer-logo"/>
 						<h3>{{beer.name}}</h3>
