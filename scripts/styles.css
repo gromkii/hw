@@ -7,8 +7,6 @@
 }
 
 .beer-logo {
-  max-height:300px;
-  max-width:150px;
+  height:100%;
   width:auto;
-
 }
