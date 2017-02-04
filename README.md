@@ -36,3 +36,29 @@ such as angular materials and $resource.
 2) If using additional libraries, please add the CDN import to the index file or provide the
 JS script in the project.
 ```
+
+## Dax's Stuff 🐰
+
+Added in a simple node server to allow files to be served. To get it started first run these commands.
+
+```
+npm install
+```
+After we have our dependencies loaded locally, we can run the server.
+```
+node index.js
+```
+
+## Testing
+For these tests, I am using protractor. To run these tests, we will first need to install the cli package.
+```
+npm install -g protractor
+```
+Next, we will need to start a testing server using webdriver-manager, which we just installed.
+```
+webdriver-manager start
+```
+In a separate terminal, we can now run our tests.
+```
+npm test
+```
