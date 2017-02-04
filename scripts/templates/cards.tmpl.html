@@ -1,0 +1,21 @@
+<md-grid-list md-cols="3" md-cols-xs="1" md-cols-sm="2" md-gutter="2em" md-row-height="4:3">
+  <md-grid-tile ng-repeat="beer in beers | orderBy:filter.order track by $index" class="tiles">
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" flex class="beer-card">
+      <md-card-title>
+        <md-card-title-text class="beer-cell">
+          <span class="md-headline">{{beer.name}}</span>
+          <span class="md-subhead">ABV: {{beer.abv}}</span>
+        </md-card-title-text>
+      <md-card-title-media>
+        <div class="md-media-lg card-media">
+          <img ng-src="{{beer.image_url}}" class="beer-logo"/>
+        </div>
+      </md-card-title-media>
+    </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button class="md-primary" ng-click="showDialog($event, beer)">More Info</md-button>
+      </md-card-actions>
+
+    </md-card>
+  </md-grid-tile>
+</md-grid-list>

@@ -1,0 +1,22 @@
+{
+  "name": "hw",
+  "version": "1.0.0",
+  "description": "WebApp Demo =========== ``` The PenPal Schools team wants to test your skills as a front-end web developer (front-end engineer).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gromkii/hw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gromkii/hw/issues"
+  },
+  "homepage": "https://github.com/gromkii/hw#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
