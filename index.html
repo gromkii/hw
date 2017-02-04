@@ -22,10 +22,18 @@
 		<div ng-controller="DemoCtrl">
 
 
-			<!-- Code Here -->
+			<!-- refactor into a partial, if neccessary. Probably not. -->
+			<md-grid-list md-cols="4" md-gutter="1.5em" md-row-height="400px">
+				<md-grid-tile ng-repeat="beer in beers" >
+					<md-content class="beer-cell">
+						<img ng-src="{{beer.image_url}}" class="beer-logo"/>
+						<h3>{{beer.name}}</h3>
+					</md-content>
+				</md-grid-tile>
+			</md-grid-list>
 
 
 		</div>
 	</body>
-	
+
 </html>

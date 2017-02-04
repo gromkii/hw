@@ -1,1 +1,14 @@
 /* No scss?? */
+
+.beer-cell {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.beer-logo {
+  max-height:300px;
+  max-width:150px;
+  width:auto;
+
+}
