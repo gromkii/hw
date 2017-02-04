@@ -20,12 +20,60 @@ angular
             },
             controller: DialogController,
             controllerAs:'dialog',
+
             // Important note, since I'm not serving these files, I can't use
-            // templateUrl! Otherwise, that would be my go-to option over this. -🐰
+            // templateUrl (XHR stuff)! Otherwise, that would be my go-to option over this. -🐰
+
             template:`
-              <md-dialog aria-label="Beer Info">
-                <md-dialog-content>
-                  Testing, {{beer.name}}
+              <md-dialog aria-label="More Info for {{beer.name}}">
+                <md-dialog-content layout="row">
+                    <div flex>
+                      <h2>{{beer.name}}</h2>
+                      <p>
+                       {{beer.description}}
+                      </p>
+
+                      <p>Brewer's Tips: {{beer.brewers_tips}}
+                    </div>
+                    <div flex>
+                      <h2>Ingredients</h2>
+                      <md-list>
+                        <md-list-item>
+                        <div>
+                          <h4>Malt</h4>
+                          <ul>
+                            <li ng-repeat="malt in beer.ingredients.malt track by $index">
+                              {{malt.name}}
+                            </li>
+                          </ul>
+                        </div>
+
+                        </md-list-item>
+
+                        <md-list-item>
+                        <div>
+                          <h4>Hops</h4>
+                          <ul>
+                            <li ng-repeat="hop in beer.ingredients.hops track by $index">
+                              {{hop.name}}
+                            </li>
+                          </ul>
+                        </div>
+
+                        </md-list-item>
+                        <md-list-item>
+                        <div>
+                          <h4>Yeast</h4>
+                          <ul>
+                            <li ng-repeat="yeast in beer.ingredients.yeast track by $index">
+                              {{yeast.name}}
+                            </li>
+                          </ul>
+                        </div>
+
+                        </md-list-item>
+                      </md-list>
+                    </div>
                 </md-dialog-content>
                 <md-dialog-actions>
                   <md-button ng-click="closeDialog()" class="md-primary">Close Dialog</md-button>
@@ -42,7 +90,7 @@ angular
         function DialogController($scope, $mdDialog, beer) {
           $scope.beer = beer;
 
-          $scope.hide = function() {
+          $scope.closeDialog = function() {
             $mdDialog.hide();
           };
 
